@@ -2,12 +2,16 @@ import Fighter from './Fighter';
 import getRandomInt from './utils';
 
 class Monster implements Fighter {
-  private _lifePoints = 85;
+  protected _lifePoints = 85; 
   private _strength = 63;
   private _defense: number = getRandomInt(1, 10);
 
   levelUp(): void {
     this._defense += 5;
+  }
+
+  getLifePoints(): number {
+    return this._lifePoints;
   }
 
   get defense(): number {
@@ -34,5 +38,8 @@ class Monster implements Fighter {
     return this._lifePoints;
   }
 }
+
+const monster = new Monster();
+console.log(monster.getLifePoints());
 
 export default Monster;
