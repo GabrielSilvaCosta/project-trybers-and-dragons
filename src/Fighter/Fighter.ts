@@ -5,6 +5,7 @@ interface Fighter {
   strength: number;
   defense: number;
   energy?: Energy;
+  //
   
   attack(enemy: Fighter): void;
   special?(enemy: Fighter): void;
